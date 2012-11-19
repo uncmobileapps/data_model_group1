@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="UMAViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="EVU-ck-eRU">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="2" id="615-fl-qiD"/>
+                                    <outlet property="delegate" destination="2" id="Vrq-qx-foW"/>
+                                </connections>
+                            </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="vdf-6i-1nb"/>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EVU-ck-eRU" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="50s-Nh-9wK"/>
+                            <constraint firstItem="vdf-6i-1nb" firstAttribute="top" secondItem="3" secondAttribute="top" constant="272" id="6vB-2D-hwM"/>
+                            <constraint firstItem="vdf-6i-1nb" firstAttribute="centerX" secondItem="EVU-ck-eRU" secondAttribute="centerX" type="default" id="MNY-jL-OeR"/>
+                            <constraint firstItem="EVU-ck-eRU" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="Rhb-uL-EtP"/>
+                            <constraint firstItem="EVU-ck-eRU" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="ysI-SQ-Q6X"/>
+                            <constraint firstItem="EVU-ck-eRU" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="zMn-7z-bfl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="vdf-6i-1nb" id="pF0-Pc-MBh"/>
+                        <outlet property="tableView" destination="EVU-ck-eRU" id="6aH-EK-QCf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
