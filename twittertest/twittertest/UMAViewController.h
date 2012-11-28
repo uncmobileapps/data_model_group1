@@ -14,7 +14,6 @@
     
     __weak UITableView *_tableView;
     __weak UIActivityIndicatorView *_activityIndicatorView;
-    NSArray *_dataSource;
 }
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

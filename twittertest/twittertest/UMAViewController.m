@@ -7,15 +7,28 @@
 //
 
 #import "UMAViewController.h"
+#import "UMATweet.h"
 
-@interface UMAViewController ()
+@interface UMAViewController () {
+    UMATweet *aTweet;
+    NSMutableArray *allTweetsArray;
+}
 
 @end
 
 @implementation UMAViewController
 
 @synthesize tableView = _tableView, activityIndicatorView = _activityIndicatorView;
-@synthesize dataSource = _dataSource;
+@synthesize dataSource;
+
+-(void)showTableView {
+    [self.tableView reloadData];
+    
+    //show tableview and hide activityIndicator
+    [self.tableView setHidden:NO];
+    [self.activityIndicatorView stopAnimating];
+    
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     if (self.dataSource) {
@@ -44,7 +57,7 @@
     NSDictionary *tweet = [self.dataSource objectAtIndex:indexPath.row];
     cell.textLabel.text = [tweet objectForKey:@"text"];
     cell.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[[tweet objectForKey:@"user"] objectForKey:@"profile_image_url"]]]];
-    
+
     return cell;
 }
 
@@ -73,9 +86,10 @@
                 
                 //set search params
                 NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
-                [parameters setObject:@"chapel hill" forKey:@"q"];
-                //[parameters setObject:@"37.781157,-122.398720,10mi" forKey:@"geocode"];
-                [parameters setObject:@"5" forKey:@"count"];
+//                [parameters setObject:@"#unc" forKey:@"q"];
+                [parameters setObject:@"smalljones" forKey:@"from"];
+//                [parameters setObject:@"37.781157,-122.398720,10mi" forKey:@"geocode"];
+//                [parameters setObject:@"5" forKey:@"count"];
                 
                 //send search request to Twitter
                 TWRequest *request = [[TWRequest alloc] initWithURL:url parameters:parameters requestMethod:TWRequestMethodGET];
@@ -92,12 +106,9 @@
                         self.dataSource = [statusesDict objectForKey:@"statuses"];
                         NSLog(@"number of tweets: %d",self.dataSource.count);
                         
+                        
                         if (self.dataSource) {
-                            [self.tableView reloadData];
-                            
-                            //show tableview and hide activityIndicator
-                            [self.tableView setHidden:NO];
-                            [self.activityIndicatorView stopAnimating];
+                            [self performSelectorOnMainThread:@selector(showTableView) withObject:nil waitUntilDone:NO];
                         } else {
                             NSLog(@"Error %@ with user info %@.", error, error.userInfo);
                         }

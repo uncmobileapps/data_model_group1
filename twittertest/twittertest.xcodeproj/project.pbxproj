@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9369A69B1665A19C00D4C4EE /* UMATweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 9369A69A1665A19C00D4C4EE /* UMATweet.m */; };
 		9375DCA21652D0430047C4C0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9375DCA11652D0430047C4C0 /* UIKit.framework */; };
 		9375DCA41652D0430047C4C0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9375DCA31652D0430047C4C0 /* Foundation.framework */; };
 		9375DCA61652D0430047C4C0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9375DCA51652D0430047C4C0 /* CoreGraphics.framework */; };
@@ -23,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9369A6991665A19C00D4C4EE /* UMATweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMATweet.h; sourceTree = "<group>"; };
+		9369A69A1665A19C00D4C4EE /* UMATweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMATweet.m; sourceTree = "<group>"; };
 		9375DC9D1652D0430047C4C0 /* twittertest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = twittertest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9375DCA11652D0430047C4C0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9375DCA31652D0430047C4C0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -96,6 +99,8 @@
 				9375DCB91652D0430047C4C0 /* MainStoryboard.storyboard */,
 				9375DCBC1652D0430047C4C0 /* UMAViewController.h */,
 				9375DCBD1652D0430047C4C0 /* UMAViewController.m */,
+				9369A6991665A19C00D4C4EE /* UMATweet.h */,
+				9369A69A1665A19C00D4C4EE /* UMATweet.m */,
 				9375DCA81652D0430047C4C0 /* Supporting Files */,
 			);
 			path = twittertest;
@@ -185,6 +190,7 @@
 				9375DCAE1652D0430047C4C0 /* main.m in Sources */,
 				9375DCB21652D0430047C4C0 /* UMAAppDelegate.m in Sources */,
 				9375DCBE1652D0430047C4C0 /* UMAViewController.m in Sources */,
+				9369A69B1665A19C00D4C4EE /* UMATweet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
